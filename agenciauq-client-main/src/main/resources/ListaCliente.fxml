@@ -5,19 +5,19 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="646.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ListaClienteController">
+<AnchorPane prefHeight="400.0" prefWidth="737.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ListaClienteController">
    <children>
-      <TableView layoutX="11.0" layoutY="115.0" prefHeight="200.0" prefWidth="623.0">
+      <TableView layoutX="29.0" layoutY="107.0" prefHeight="200.0" prefWidth="704.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Tipo" />
           <TableColumn prefWidth="75.0" text="Nombre" />
             <TableColumn prefWidth="75.0" text="Apellidos" />
+            <TableColumn prefWidth="75.0" text="ID" />
+            <TableColumn prefWidth="56.66668701171875" text="NIT" />
             <TableColumn prefWidth="75.0" text="Dirección" />
             <TableColumn prefWidth="75.0" text="Telefono" />
-            <TableColumn prefWidth="77.3333740234375" text="Email" />
             <TableColumn prefWidth="111.99990844726562" text="Fecha de Nacimiento" />
-            <TableColumn prefWidth="56.66668701171875" text="NIT" />
+            <TableColumn prefWidth="77.3333740234375" text="Email" />
         </columns>
       </TableView>
       <Button fx:id="btnRegresar" layoutX="29.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
