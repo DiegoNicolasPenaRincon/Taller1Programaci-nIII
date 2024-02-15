@@ -1,4 +1,4 @@
 package co.edu.uniquindio.agencia.controller;
 
-public class RegistroClienteController {
+public class ListaClienteController {
 }
