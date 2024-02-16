@@ -57,6 +57,10 @@ public class RegistroProductoController implements Initializable {
     @FXML
     private TextField txtTemp;
 
+    @FXML
+    private TextField txtValor;
+
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         panelR.setVisible(false);
