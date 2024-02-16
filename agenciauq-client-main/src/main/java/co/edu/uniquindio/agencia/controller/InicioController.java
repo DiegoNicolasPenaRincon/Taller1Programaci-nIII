@@ -45,9 +45,8 @@ public class InicioController {
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
-
-        //RegistroProductoController controller =loader.getController();
-      //  controller.init(stage, this, cliente);
+        RegistroProductoController controller =loader.getController();
+        controller.setStage(stage);
         stage.show();
         this.stage.close();
     }
@@ -59,8 +58,8 @@ public class InicioController {
         Stage stage = new Stage();
         stage.setScene(scene);
 
-        //RegistroClienteController controller =loader.getController();
-        //  controller.init(stage, this, cliente);
+        RegistroClienteController controller =loader.getController();
+        controller.setStage(stage);
         stage.show();
         this.stage.close();
     }
@@ -71,9 +70,8 @@ public class InicioController {
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
-
-        //ListaClienteController controller =loader.getController();
-        //  controller.init(stage, this, cliente);
+        ListaClienteController controller =loader.getController();
+        controller.setStage(stage);
         stage.show();
         this.stage.close();
     }
@@ -84,9 +82,8 @@ public class InicioController {
         Scene scene = new Scene(root);
         Stage stage = new Stage();
         stage.setScene(scene);
-
-        //ListaClienteController controller =loader.getController();
-        //  controller.init(stage, this, cliente);
+        ListaProductoController controller =loader.getController();
+        controller.setStage(stage);
         stage.show();
         this.stage.close();
     }

@@ -20,6 +20,6 @@
             <TableColumn fx:id="colEmail" prefWidth="77.3333740234375" text="Email" />
         </columns>
       </TableView>
-      <Button fx:id="btnRegresar" layoutX="29.0" layoutY="343.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
+      <Button fx:id="btnRegresar" layoutX="29.0" layoutY="343.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
    </children>
 </AnchorPane>

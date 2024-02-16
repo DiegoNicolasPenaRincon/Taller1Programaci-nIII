@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.RegistroClienteController">
    <children>
-      <Button fx:id="btnRegresar" layoutX="31.0" layoutY="353.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
+      <Button fx:id="btnRegresar" layoutX="31.0" layoutY="353.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
       <TextField fx:id="txtNombre" layoutX="29.0" layoutY="67.0" prefHeight="25.0" prefWidth="169.0" />
       <Label layoutX="30.0" layoutY="38.0" text="Nombres:" />
       <Label layoutX="30.0" layoutY="108.0" text="Apellidos:" />
@@ -37,5 +37,6 @@
             <TextField fx:id="txtNIT" layoutX="23.0" layoutY="29.0" prefHeight="25.0" prefWidth="183.0" />
          </children>
       </Pane>
+      <Button fx:id="btnRegistrar" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" text="Registrar" />
    </children>
 </AnchorPane>

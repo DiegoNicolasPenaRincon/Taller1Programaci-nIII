@@ -7,7 +7,7 @@
    <children>
       <Button fx:id="btnRegistroCliente" layoutX="158.0" layoutY="98.0" mnemonicParsing="false" onAction="#mostrarRegistroCliente" text="Registrar cliente" />
       <Button fx:id="btnRegistroProducto" layoutX="151.0" layoutY="187.0" mnemonicParsing="false" onAction="#mostrarRegistroProducto" text="Registrar Producto" />
-      <Button fx:id="btnListaProducto" layoutX="141.0" layoutY="231.0" mnemonicParsing="false" onAction="#mostrarMensaje" text="Ver Lista de Productos" />
-      <Button fx:id="btnListaCliente" layoutX="147.0" layoutY="135.0" mnemonicParsing="false" onAction="#mostrarMensaje" text="Ver Lista de Clientes" />
+      <Button fx:id="btnListaProducto" layoutX="141.0" layoutY="231.0" mnemonicParsing="false" onAction="#mostrarListaProducto" text="Ver Lista de Productos" />
+      <Button fx:id="btnListaCliente" layoutX="147.0" layoutY="135.0" mnemonicParsing="false" onAction="#mostrarListaCliente" text="Ver Lista de Clientes" />
    </children>
 </AnchorPane>

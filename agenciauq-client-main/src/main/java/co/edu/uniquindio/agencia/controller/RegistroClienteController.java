@@ -1,13 +1,18 @@
 package co.edu.uniquindio.agencia.controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -17,6 +22,9 @@ public class RegistroClienteController implements Initializable{
 
     @FXML
     private Button btnRegresar;
+
+    @FXML
+    private Button btnRegistrar;
 
     @FXML
     private ComboBox<String> comboTipo;
@@ -48,6 +56,12 @@ public class RegistroClienteController implements Initializable{
     @FXML
     private Pane panelN;
 
+    private Stage stage;
+
+    public void setStage(Stage PrimaryStage) {
+        stage=PrimaryStage;
+    }
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         panelN.setVisible(false);
@@ -70,5 +84,17 @@ public class RegistroClienteController implements Initializable{
                     break;
             }
         });
+    }
+
+    public void regresar() throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("/Ventanas/inicio.fxml"));
+        Parent root=loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+        InicioController controller =loader.getController();
+        controller.setStage(stage);
+        stage.show();
+        this.stage.close();
     }
 }

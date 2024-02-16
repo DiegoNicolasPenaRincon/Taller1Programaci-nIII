@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ListaProductoController">
    <children>
       <TableView fx:id="tablaProducto" layoutX="14.0" layoutY="85.0" prefHeight="200.0" prefWidth="791.0">
@@ -22,6 +21,6 @@
             <TableColumn fx:id="colPais" prefWidth="71.33333333333337" text="Pais Origen" />
         </columns>
       </TableView>
-      <Button fx:id="btnRegresar" layoutX="45.0" layoutY="344.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" text="Regresar" />
+      <Button fx:id="btnRegresar" layoutX="45.0" layoutY="344.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="82.0" text="Regresar" />
    </children>
 </AnchorPane>
