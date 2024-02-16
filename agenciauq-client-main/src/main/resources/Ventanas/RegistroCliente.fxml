@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.RegistroClienteController">
    <children>
@@ -20,13 +21,21 @@
       <TextField fx:id="txtDireccion" layoutX="29.0" layoutY="247.0" prefHeight="25.0" prefWidth="169.0" />
       <Label layoutX="42.0" layoutY="284.0" text="Telefono:" />
       <TextField fx:id="txtTelefono" layoutX="29.0" layoutY="309.0" prefHeight="25.0" prefWidth="169.0" />
-      <ComboBox layoutX="279.0" layoutY="67.0" prefHeight="25.0" prefWidth="169.0" />
-      <DatePicker layoutX="279.0" layoutY="137.0" prefHeight="25.0" prefWidth="183.0" />
-      <Label layoutX="279.0" layoutY="116.0" text="Fecha de Nacimiento:" />
-      <Label layoutX="279.0" layoutY="38.0" text="Tipo de Persona:" />
-      <Label layoutX="279.0" layoutY="178.0" text="Email:" />
-      <TextField fx:id="txtID1" layoutX="279.0" layoutY="199.0" prefHeight="25.0" prefWidth="183.0" />
-      <Label layoutX="279.0" layoutY="247.0" prefHeight="25.0" prefWidth="39.0" text="NIT" />
-      <TextField fx:id="txtID11" layoutX="279.0" layoutY="271.0" prefHeight="25.0" prefWidth="183.0" />
+      <ComboBox fx:id="comboTipo" layoutX="242.0" layoutY="67.0" prefHeight="25.0" prefWidth="169.0" />
+      <Label layoutX="242.0" layoutY="38.0" text="Tipo de Persona:" />
+      <Pane fx:id="panelN" layoutX="242.0" layoutY="123.0" prefHeight="231.0" prefWidth="258.0">
+         <children>
+            <Label layoutY="72.0" prefHeight="17.0" prefWidth="67.0" text="Email:" />
+            <Label text="Fecha de Nacimiento:" />
+            <DatePicker fx:id="DateNacimiento" layoutY="21.0" prefHeight="25.0" prefWidth="183.0" />
+            <TextField fx:id="txtEmail" layoutY="99.0" prefHeight="25.0" prefWidth="183.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="panelJ" layoutX="218.0" layoutY="114.0" prefHeight="240.0" prefWidth="249.0">
+         <children>
+            <Label layoutX="26.0" layoutY="9.0" prefHeight="17.0" prefWidth="88.0" text="NIT" />
+            <TextField fx:id="txtNIT" layoutX="23.0" layoutY="29.0" prefHeight="25.0" prefWidth="183.0" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

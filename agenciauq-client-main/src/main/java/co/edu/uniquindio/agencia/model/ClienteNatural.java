@@ -8,9 +8,8 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 
-public class Natural extends Cliente {
+public class ClienteNatural extends Cliente {
 
     private String email;
 

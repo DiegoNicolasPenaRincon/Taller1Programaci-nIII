@@ -7,7 +7,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Juridico extends Cliente {
+public class ClienteJuridico extends Cliente {
 
     private String nit;
 
