@@ -14,7 +14,7 @@ import java.io.IOException;
 public class InicioController {
     @FXML
     private Button btnListaCliente;
-
+    
     @FXML
     private Button btnListaProducto;
 
@@ -60,6 +60,32 @@ public class InicioController {
         stage.setScene(scene);
 
         //RegistroClienteController controller =loader.getController();
+        //  controller.init(stage, this, cliente);
+        stage.show();
+        this.stage.close();
+    }
+
+    public void mostrarListaCliente() throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("/Ventanas/ListaCliente.fxml"));
+        Parent root=loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+
+        //ListaClienteController controller =loader.getController();
+        //  controller.init(stage, this, cliente);
+        stage.show();
+        this.stage.close();
+    }
+
+    public void mostrarListaProducto() throws IOException {
+        FXMLLoader loader=new FXMLLoader(getClass().getResource("/Ventanas/ListaProducto.fxml"));
+        Parent root=loader.load();
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setScene(scene);
+
+        //ListaClienteController controller =loader.getController();
         //  controller.init(stage, this, cliente);
         stage.show();
         this.stage.close();
