@@ -1,5 +1,6 @@
 package co.edu.uniquindio.agencia.controller;
 
+import co.edu.uniquindio.agencia.model.Almacen;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +13,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class InicioController {
+
+    private final Almacen almacen=Almacen.getInstance();
+
     @FXML
     private Button btnListaCliente;
     

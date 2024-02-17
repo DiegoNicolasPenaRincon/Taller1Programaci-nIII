@@ -15,4 +15,15 @@ public class Almacen {
 
     private ArrayList<Refrigerante> listaRefrigerantes=new ArrayList<Refrigerante>();
 
+    private static Almacen Almacen;
+
+    public static Almacen getInstance(){
+        if(Almacen ==null){
+            Almacen =new Almacen();
+        }
+        return Almacen;
+    }
+
+
+
 }

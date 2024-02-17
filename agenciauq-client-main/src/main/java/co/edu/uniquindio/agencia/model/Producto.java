@@ -8,7 +8,9 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 
-public class Producto {
+public abstract class Producto {
 
     private String codigo,nombre,descripcion;
+    private double valorUnitario;
+    private int cantExistencias;
 }

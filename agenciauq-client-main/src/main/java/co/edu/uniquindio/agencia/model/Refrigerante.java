@@ -11,6 +11,6 @@ public class Refrigerante extends Producto {
 
     private String codigoAprobacion;
 
-    private double temperaturaRecomendada;
+    private float temperaturaRecomendada;
 
 }
