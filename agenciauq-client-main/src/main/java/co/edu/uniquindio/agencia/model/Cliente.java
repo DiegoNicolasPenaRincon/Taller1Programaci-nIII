@@ -8,7 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 
-public abstract class Cliente {
+public class Cliente {
 
     private String nombre, apellidos, identificacion, direccion,telefono;
 

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 
 public class Envasado extends Producto  {
-    
+
     private LocalDate fechaEnvasado;
     private float peso;
     private PaisOrigen pais;

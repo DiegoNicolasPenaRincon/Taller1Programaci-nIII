@@ -1,5 +1,6 @@
 package co.edu.uniquindio.agencia.controller;
 
+import co.edu.uniquindio.agencia.model.Almacen;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +18,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RegistroClienteController implements Initializable{
+
+    private final Almacen almacen=Almacen.getInstance();
     @FXML
     private DatePicker DateNacimiento;
 
@@ -96,5 +99,8 @@ public class RegistroClienteController implements Initializable{
         controller.setStage(stage);
         stage.show();
         this.stage.close();
+    }
+
+    public void registrarCliente(){
     }
 }
