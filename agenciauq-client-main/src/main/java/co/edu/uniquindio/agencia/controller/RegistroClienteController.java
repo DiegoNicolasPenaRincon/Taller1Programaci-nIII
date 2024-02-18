@@ -103,5 +103,6 @@ public class RegistroClienteController implements Initializable{
 
     public void registrarCliente() {
         String esNatural=comboTipo.getSelectionModel().getSelectedItem();
+        almacen.registrarCliente(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText(),txtNIT.getText(),txtEmail.getText(),txt);
     }
 }
