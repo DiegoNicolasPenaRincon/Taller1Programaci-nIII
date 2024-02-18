@@ -2,16 +2,14 @@ package co.edu.uniquindio.agencia.controller;
 
 import co.edu.uniquindio.agencia.model.Almacen;
 import co.edu.uniquindio.agencia.model.CampoVacioException;
+import co.edu.uniquindio.agencia.model.IdentificacionNoValidaException;
 import co.edu.uniquindio.agencia.model.TelefonoNoValidoException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -107,19 +105,58 @@ public class RegistroClienteController implements Initializable{
         String esNatural=comboTipo.getSelectionModel().getSelectedItem();
         try
         {
-            almacen.registrarCliente(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText(),txtNIT.getText(),txtEmail.getText(),DateNacimiento.getValue().toString(),esNatural);
+            almacen.validarValoresGeneralesClientes(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText());
+            if(esNatural.equals("Natural"))
+            {
+                almacen.registrarClienteNatural(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText(),txtEmail.getText(),DateNacimiento.getValue().toString());
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Se ha registrado con exito N");
+                alert.setHeaderText(null);
+                alert.show();
+            }
+            else
+            {
+                almacen.registrarClienteJuridico(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText(),txtNIT.getText());
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+                alert.setContentText("Se ha registrado con exito J");
+                alert.setHeaderText(null);
+                alert.show();
+            }
         }
         catch (TelefonoNoValidoException e)
         {
-
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Su telefono debe contener 7 digitos ");
+            alert.setHeaderText(null);
+            alert.show();
         }
         catch (CampoVacioException ex)
         {
-
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(ex.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
         }
         catch (NumberFormatException ex2)
         {
-
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Su telefono y su identificacion deben contener unicamente numeros ");
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch (NullPointerException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Debe enviar una fecha valida ");
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch (IdentificacionNoValidaException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
         }
     }
 }

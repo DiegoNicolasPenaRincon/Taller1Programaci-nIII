@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.RegistroClienteController">
+<AnchorPane prefHeight="400.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.RegistroClienteController">
    <children>
       <Button fx:id="btnRegresar" layoutX="31.0" layoutY="353.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
       <TextField fx:id="txtNombre" layoutX="29.0" layoutY="67.0" prefHeight="25.0" prefWidth="169.0" />
@@ -37,6 +32,6 @@
             <TextField fx:id="txtNIT" layoutX="23.0" layoutY="29.0" prefHeight="25.0" prefWidth="183.0" />
          </children>
       </Pane>
-      <Button fx:id="btnRegistrar" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" text="Registrar" />
+      <Button fx:id="btnRegistrar" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" onAction="#registrarCliente" text="Registrar" />
    </children>
 </AnchorPane>

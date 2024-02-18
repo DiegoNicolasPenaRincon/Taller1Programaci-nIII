@@ -29,27 +29,23 @@ public class Almacen {
         this.listaProductos=new ArrayList<>();
     }
 
-    public void registrarCliente(String nombre, String apellido,String ID, String direccion, String telefono, String NIT,String email,String nacimiento,String esNatural) throws CampoVacioException, TelefonoNoValidoException {
+    public void registrarClienteNatural(String nombre, String apellido,String ID, String direccion, String telefono,String email,String nacimiento) throws CampoVacioException {
+
         String campoObligatorio="Este campo es obligatorio";
-        validarCampoVacio(nombre,campoObligatorio);
-        validarCampoVacio(ID,campoObligatorio);
-        validarCampoVacio(direccion,campoObligatorio);
-        validarCampoVacio(telefono,campoObligatorio);
-        validarTelefono(telefono);
-        validarCampoVacio(apellido,campoObligatorio);
-        if(esNatural.equals("Natural"))
-        {
-            validarCampoVacio(nacimiento,campoObligatorio);
-            validarCampoVacio(email,campoObligatorio);
-            ClienteNatural natural=new ClienteNatural(nombre,apellido,ID,direccion,telefono,email,LocalDate.parse(nacimiento));
-            listaClientesNaturales.add(natural);
-        }
-        else
-        {
-            validarCampoVacio(NIT,campoObligatorio);
-            ClienteJuridico juridico=new ClienteJuridico(nombre,apellido,ID,direccion,telefono,NIT);
-            listaClientesJuridicos.add(juridico);
-        }
+        validarCampoVacio(nacimiento,campoObligatorio);
+        validarCampoVacio(email,campoObligatorio);
+        ClienteNatural natural=new ClienteNatural(nombre,apellido,ID,direccion,telefono,email,LocalDate.parse(nacimiento));
+        listaClientesNaturales.add(natural);
+
+
+    }
+
+    public void registrarClienteJuridico(String nombre, String apellido,String ID, String direccion, String telefono,String NIT) throws CampoVacioException, TelefonoNoValidoException {
+
+        String campoObligatorio="Este campo es obligatorio";
+        validarCampoVacio(NIT,campoObligatorio);
+        ClienteJuridico juridico=new ClienteJuridico(nombre,apellido,ID,direccion,telefono,NIT);
+        listaClientesJuridicos.add(juridico);
 
     }
 
@@ -66,6 +62,24 @@ public class Almacen {
         if(telefono.length()!=7)
         {
             throw new TelefonoNoValidoException("El telefono debe contener unica y exclusivamente 7 digitos");
+        }
+     }
+
+     public void validarValoresGeneralesClientes(String nombre, String apellido,String ID, String direccion, String telefono) throws CampoVacioException, TelefonoNoValidoException, IdentificacionNoValidaException {
+         String campoObligatorio="Este campo es obligatorio";
+         validarCampoVacio(nombre,campoObligatorio);
+         validarCampoVacio(ID,campoObligatorio);
+         validarCampoVacio(direccion,campoObligatorio);
+         validarCampoVacio(telefono,campoObligatorio);
+         validarTelefono(telefono);
+         validarCampoVacio(apellido,campoObligatorio);
+         validarIdentificacion(ID,"Su identificacion debe contener 8 caracteres");
+     }
+
+     public void validarIdentificacion(String identificacion,String msg) throws IdentificacionNoValidaException {
+        if(identificacion.length()!=8)
+        {
+            throw new IdentificacionNoValidaException(msg);
         }
      }
 }
