@@ -1,15 +1,13 @@
 package co.edu.uniquindio.agencia.controller;
 
 import co.edu.uniquindio.agencia.model.Almacen;
+import co.edu.uniquindio.agencia.model.CampoVacioException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
@@ -101,8 +99,20 @@ public class RegistroClienteController implements Initializable{
         this.stage.close();
     }
 
-    public void registrarCliente() {
-        String esNatural=comboTipo.getSelectionModel().getSelectedItem();
-        almacen.registrarCliente(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText(),txtNIT.getText(),txtEmail.getText(),txt);
+    public void registrarCliente() throws CampoVacioException {
+        try {
+            String esNatural = comboTipo.getSelectionModel().getSelectedItem();
+            almacen.registrarCliente(txtNombre.getText(), txtApellido.getText(), txtID.getText(), txtDireccion.getText(), txtTelefono.getText(),
+                    txtNIT.getText(), txtEmail.getText(), DateNacimiento.getValue(), esNatural);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Se ha registrado correctamente el cliente ");
+            alert.show();
+        } catch (CampoVacioException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
     }
 }

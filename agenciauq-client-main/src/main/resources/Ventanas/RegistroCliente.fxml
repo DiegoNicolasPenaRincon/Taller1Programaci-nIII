@@ -37,6 +37,6 @@
             <TextField fx:id="txtNIT" layoutX="23.0" layoutY="29.0" prefHeight="25.0" prefWidth="183.0" />
          </children>
       </Pane>
-      <Button fx:id="btnRegistrar" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" text="Registrar" />
+      <Button fx:id="btnRegistrar" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" onAction="#registrarCliente" text="Registrar" />
    </children>
 </AnchorPane>
