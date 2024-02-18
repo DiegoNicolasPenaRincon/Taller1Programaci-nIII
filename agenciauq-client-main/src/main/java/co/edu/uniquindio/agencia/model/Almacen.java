@@ -25,11 +25,9 @@ public class Almacen {
     }
 
     private Almacen(){
-      //  this.listaClientesNaturales=new ArrayList<>();
-        //this.listaClientesJuridicos=new ArrayList<>();
-        this.listaClientes=new ArrayList<>();
+        this.listaClientes=new ArrayList<Cliente>();
 
-        this.listaProductos=new ArrayList<>();
+        this.listaProductos=new ArrayList<Producto>();
     }
 
     public void registrarCliente(String nombre, String apellido,String ID,
@@ -65,7 +63,7 @@ public class Almacen {
     }
 
     public void registrarProducto(String tipo, String codigo, String nombre,String descripcion, String valorUni, String cantExis, LocalDate vencimiento,
-                                  String codigoAprobacion, String temperaturaRecomendada, LocalDate fechaEnvasado, String peso, PaisOrigen pais) throws CampoVacioException {
+                                  String codigoAprobacion, String temperaturaRecomendada, LocalDate fechaEnvasado, String peso, PaisOrigen pais) throws CampoVacioException, TipoNoEspecificadoException {
 
         validarCampoVacio(codigo,"Debe especificar el codigo del producto");
         validarCampoVacio(nombre,"Debe especificar el nombre del producto");
@@ -76,26 +74,34 @@ public class Almacen {
         double valorUnitario=Double.parseDouble(valorUni);
         int cantidadExis=Integer.parseInt(cantExis);
 
-        if(tipo.equals("Perecedero")){
+        if(tipo.equals("Perecedero"))
+        {
             validarCampoVacio(String.valueOf(vencimiento),"Debe especificar la fecha de vencimiento");
             Perecedero perecedero=new Perecedero(tipo, codigo, nombre, descripcion,valorUnitario, cantidadExis, vencimiento);
             listaProductos.add(perecedero);
         }
-        else if(tipo.equals("Refrigerante")){
+        else if(tipo.equals("Refrigerante"))
+        {
             validarCampoVacio(codigoAprobacion,"Debe especificar el codigo de aprobacion");
             validarCampoVacio(String.valueOf(temperaturaRecomendada),"Debe especificar la temperatura recomendada");
             float temperatura=Float.parseFloat(temperaturaRecomendada);
             Refrigerante refrigerante=new Refrigerante(tipo, codigo, nombre, descripcion, valorUnitario, cantidadExis, codigoAprobacion, temperatura);
             listaProductos.add(refrigerante);
-        } else if (tipo.equals("Envasado")) {
+        }
+        else if (tipo.equals("Envasado"))
+        {
             validarCampoVacio(String.valueOf(fechaEnvasado),"Debe especificar la fecha de envasado del producto");
             validarCampoVacio(String.valueOf(peso),"Debe especificar el peso del producto");
             float pesoEnvase=Float.parseFloat(peso);
             validarCampoVacio(String.valueOf(pais),"Debe especificar el pais de origen del producto");
             Envasado envasado=new Envasado(tipo, codigo, nombre, descripcion, valorUnitario, cantidadExis, fechaEnvasado, pesoEnvase, pais);
             listaProductos.add(envasado);
-
         }
+        else
+        {
+            throw new TipoNoEspecificadoException("Debe especificar el tipo de producto");
+        }
+
     }
 
 
