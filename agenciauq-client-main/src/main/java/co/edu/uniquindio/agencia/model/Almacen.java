@@ -48,14 +48,12 @@ public class Almacen {
             validarCampoVacio(email,"Debe especificar el email");
             ClienteNatural natural=new ClienteNatural("Natural",nombre,apellido,ID,direccion,telefono,email,nacimiento);
             verificarRegistro(natural);
-          //  listaClientesNaturales.add(natural);
             listaClientes.add(natural);
         }
         else if(esNatural.equals("Juridica"))
         {
             validarCampoVacio(NIT,"Debe especificar el NIT del cliente");
             ClienteJuridico juridico=new ClienteJuridico("Juridico", nombre,apellido,ID,direccion,telefono,NIT);
-            //listaClientesJuridicos.add(juridico);
             verificarRegistro(juridico);
             listaClientes.add(juridico);
         }
@@ -85,7 +83,7 @@ public class Almacen {
             verificarProductos(perecedero);
             listaProductos.add(perecedero);
         }
-        else if(tipo.equals("Refrigerante"))
+        else if(tipo.equals("Refrigerado"))
         {
             validarCampoVacio(codigoAprobacion,"Debe especificar el codigo de aprobacion");
             validarIdentificacionYCodigo(codigoAprobacion,"El codigo de aprobacion debe contener 8 caracteres");
@@ -99,7 +97,7 @@ public class Almacen {
         {
             if(fechaEnvasado==null)
             {
-                throw new CampoVacioException("Debe especificar la fecha de vencimiento del producto");
+                throw new CampoVacioException("Debe especificar la fecha de envasado del producto del producto");
             }
             validarCampoVacio(String.valueOf(peso),"Debe especificar el peso del producto");
             float pesoEnvase=Float.parseFloat(peso);
