@@ -29,12 +29,13 @@ public class Almacen {
         this.listaProductos=new ArrayList<>();
     }
 
-    public void registrarCliente(String nombre, String apellido,String ID, String direccion, String telefono, String NIT,String email,String nacimiento,String esNatural) throws CampoVacioException {
+    public void registrarCliente(String nombre, String apellido,String ID, String direccion, String telefono, String NIT,String email,String nacimiento,String esNatural) throws CampoVacioException, TelefonoNoValidoException {
         String campoObligatorio="Este campo es obligatorio";
         validarCampoVacio(nombre,campoObligatorio);
         validarCampoVacio(ID,campoObligatorio);
         validarCampoVacio(direccion,campoObligatorio);
         validarCampoVacio(telefono,campoObligatorio);
+        validarTelefono(telefono);
         validarCampoVacio(apellido,campoObligatorio);
         if(esNatural.equals("Natural"))
         {
@@ -58,6 +59,13 @@ public class Almacen {
         if(cualquiera.isEmpty()||cualquiera==null)
         {
             throw new CampoVacioException(msg);
+        }
+     }
+
+     public void validarTelefono(String telefono) throws TelefonoNoValidoException {
+        if(telefono.length()!=7)
+        {
+            throw new TelefonoNoValidoException("El telefono debe contener unica y exclusivamente 7 digitos");
         }
      }
 }
