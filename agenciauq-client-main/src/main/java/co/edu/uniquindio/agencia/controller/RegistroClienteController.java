@@ -113,7 +113,7 @@ public class RegistroClienteController implements Initializable{
                 alert.setContentText("Se ha registrado correctamente el cliente natural ");
                 alert.show();
             }
-            else if(esNatural.equals("Juridico"))
+            else if(esNatural.equals("Juridica"))
             {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setHeaderText(null);

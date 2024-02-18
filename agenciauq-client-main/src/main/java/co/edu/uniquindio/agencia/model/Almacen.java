@@ -53,7 +53,7 @@ public class Almacen {
           //  listaClientesNaturales.add(natural);
             listaClientes.add(natural);
         }
-        else if(esNatural.equals("Juridico"))
+        else if(esNatural.equals("Juridica"))
         {
             validarCampoVacio(NIT,"Debe especificar el NIT del cliente");
             ClienteJuridico juridico=new ClienteJuridico("Juridico", nombre,apellido,ID,direccion,telefono,NIT);
@@ -127,7 +127,7 @@ public class Almacen {
     public void verificarRegistro(Cliente cliente) throws ClienteRegistradoException {
         for(int i=0;i<listaClientes.size();i++)
         {
-            if(cliente.equals(listaClientes.get(i)))
+            if(cliente.getIdentificacion().equals(listaClientes.get(i).getIdentificacion()))
             {
                 throw new ClienteRegistradoException("Ese cliente ya esta registrado");
             }
