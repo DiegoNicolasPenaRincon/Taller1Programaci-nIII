@@ -1,6 +1,5 @@
 package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.agencia.model.Almacen;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
