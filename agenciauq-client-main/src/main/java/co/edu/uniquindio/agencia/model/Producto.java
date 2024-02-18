@@ -10,7 +10,7 @@ import lombok.*;
 
 public class Producto {
 
-    private String codigo,nombre,descripcion;
+    private String tipo, codigo,nombre,descripcion;
     private double valorUnitario;
     private int cantExistencias;
 }

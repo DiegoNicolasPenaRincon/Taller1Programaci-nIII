@@ -1,8 +1,10 @@
 package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.agencia.model.Producto;
+import co.edu.uniquindio.agencia.model.*;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,31 +13,33 @@ import javafx.scene.control.TableView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ListaProductoController {
+public class ListaProductoController implements Initializable {
     @FXML
     private Button btnRegresar;
 
     @FXML
-    private TableColumn<Producto, String> colAprob;
+    private TableColumn<Refrigerante, String> colAprob;
 
     @FXML
-    private TableColumn<Producto, String> colEnvasado;
+    private TableColumn<Envasado, String> colEnvasado;
 
     @FXML
-    private TableColumn<Producto, String> colExis;
+    private TableColumn<Producto, Integer> colExis;
 
     @FXML
     private TableColumn<Producto, String> colNombre;
 
     @FXML
-    private TableColumn<Producto, String> colPais;
+    private TableColumn<Envasado, PaisOrigen> colPais;
 
     @FXML
-    private TableColumn<Producto, String> colPeso;
+    private TableColumn<Envasado, String> colPeso;
 
     @FXML
-    private TableColumn<Producto, String> colTemp;
+    private TableColumn<Refrigerante, Float> colTemp;
 
     @FXML
     private TableColumn<Producto, String> colTipo;
@@ -44,7 +48,10 @@ public class ListaProductoController {
     private TableColumn<Producto, String> colValor;
 
     @FXML
-    private TableColumn<Producto, String> colVenci;
+    private TableColumn<Perecedero, String> colVenci;
+
+    @FXML
+    private TableColumn<Producto, String> colCod;
 
     @FXML
     private TableView<Producto> tablaProducto;
@@ -67,4 +74,13 @@ public class ListaProductoController {
         this.stage.close();
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        colTipo.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getTipo()));
+        colCod.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getCodigo()));
+        colNombre.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getNombre()));
+        colValor.setCellValueFactory(cellData-> new SimpleStringProperty(Double.toString(cellData.getValue().getValorUnitario())));
+
+
+    }
 }

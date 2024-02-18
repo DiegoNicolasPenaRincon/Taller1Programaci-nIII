@@ -46,7 +46,7 @@
       <ComboBox fx:id="comboTipo" layoutX="351.0" layoutY="59.0" prefHeight="25.0" prefWidth="169.0" />
       <Label layoutX="351.0" layoutY="35.0" text="Tipo de Producto:" />
       <Button fx:id="btnRegresar" layoutX="20.0" layoutY="412.0" mnemonicParsing="false" onAction="#regresar" text="Regresar" />
-      <Button fx:id="btnRegistrar" layoutX="226.0" layoutY="412.0" mnemonicParsing="false" text="Registrar" />
+      <Button fx:id="btnRegistrar" layoutX="226.0" layoutY="412.0" mnemonicParsing="false" onAction="#registrarProducto" text="Registrar" />
       <Label layoutX="34.0" layoutY="200.0" text="Valor Unitario:" />
       <TextField fx:id="txtValor" layoutX="30.0" layoutY="227.0" prefHeight="25.0" prefWidth="175.0" />
    </children>

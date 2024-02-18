@@ -5,20 +5,21 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="811.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ListaProductoController">
+<AnchorPane prefHeight="400.0" prefWidth="839.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.ListaProductoController">
    <children>
-      <TableView fx:id="tablaProducto" layoutX="14.0" layoutY="85.0" prefHeight="200.0" prefWidth="791.0">
+      <TableView fx:id="tablaProducto" layoutX="14.0" layoutY="87.0" prefHeight="200.0" prefWidth="840.0">
         <columns>
-          <TableColumn fx:id="colTipo" prefWidth="75.0" text="Tipo" />
-          <TableColumn fx:id="colNombre" prefWidth="71.33330535888672" text="Nombre" />
-            <TableColumn fx:id="colValor" prefWidth="71.33334350585938" text="Valor" />
-            <TableColumn fx:id="colExis" prefWidth="74.66664123535156" text="Existencias" />
-            <TableColumn fx:id="colVenci" prefWidth="100.0" text="F. Vencimiento" />
-            <TableColumn fx:id="colAprob" prefWidth="102.00003051757812" text="Cod. Aprobación" />
-            <TableColumn fx:id="colTemp" prefWidth="102.66665649414062" text="Temperatura (C°)" />
-            <TableColumn fx:id="colEnvasado" minWidth="6.0" prefWidth="70.0" text="F. Envasado" />
-            <TableColumn fx:id="colPeso" minWidth="2.66668701171875" prefWidth="50.0" text="Peso(g)" />
-            <TableColumn fx:id="colPais" prefWidth="71.33333333333337" text="Pais Origen" />
+          <TableColumn fx:id="colTipo" prefWidth="61.333346366882324" text="Tipo" />
+            <TableColumn prefWidth="66.66667938232422" text="Codigo" />
+          <TableColumn fx:id="colNombre" prefWidth="71.33328247070312" text="Nombre" />
+            <TableColumn fx:id="colValor" prefWidth="60.66664123535156" text="Valor" />
+            <TableColumn fx:id="colExis" prefWidth="70.0" text="Existencias" />
+            <TableColumn fx:id="colVenci" prefWidth="88.66668701171875" text="F. Vencimiento" />
+            <TableColumn fx:id="colAprob" prefWidth="105.99996948242188" text="Cod. Aprobación" />
+            <TableColumn fx:id="colTemp" prefWidth="105.3333740234375" text="Temperatura (C°)" />
+            <TableColumn fx:id="colEnvasado" minWidth="6.0" prefWidth="79.33331298828125" text="F. Envasado" />
+            <TableColumn fx:id="colPeso" minWidth="2.66668701171875" prefWidth="48.6666259765625" text="Peso(g)" />
+            <TableColumn fx:id="colPais" prefWidth="75.33331298828125" text="Pais Origen" />
         </columns>
       </TableView>
       <Button fx:id="btnRegresar" layoutX="45.0" layoutY="344.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="82.0" text="Regresar" />

@@ -1,5 +1,8 @@
 package co.edu.uniquindio.agencia.controller;
 
+import co.edu.uniquindio.agencia.model.Almacen;
+import co.edu.uniquindio.agencia.model.CampoVacioException;
+import co.edu.uniquindio.agencia.model.PaisOrigen;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -14,6 +17,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class RegistroProductoController implements Initializable {
+
+    private final Almacen almacen=Almacen.getInstance();
+
     @FXML
     private Button btnRegistrar;
 
@@ -21,7 +27,7 @@ public class RegistroProductoController implements Initializable {
     private Button btnRegresar;
 
     @FXML
-    private ComboBox<String> comboPais;
+    private ComboBox<PaisOrigen> comboPais;
 
     @FXML
     private ComboBox<String> comboTipo;
@@ -102,7 +108,42 @@ public class RegistroProductoController implements Initializable {
                     break;
             }
         });
+        PaisOrigen[] paises=PaisOrigen.values();
+        comboPais.getItems().add(null);
+        comboPais.getItems().addAll(paises);
+        comboPais.setValue(null);
+
     }
+
+    public void registrarProducto(){
+        try {
+            String tipoProducto = comboTipo.getSelectionModel().getSelectedItem();
+
+            almacen.registrarProducto(tipoProducto,
+                    txtCodigo.getText(),
+                    txtNombre.getText(),
+                    txtDescripcion.getText(),
+                    txtValor.getText(),
+                    txtExistencia.getText(),
+                    dateVencimiento.getValue(),
+                    txtAprobacion.getText(),
+                    txtTemp.getText(),
+                    dateEnvasado.getValue(),
+                    txtPeso.getText(),
+                    comboPais.getValue());
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setHeaderText(null);
+            alert.setContentText("Se ha registrado correctamente el producto. ");
+            alert.show();
+        } catch (CampoVacioException e) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+    }
+
 
     public void regresar() throws IOException {
         FXMLLoader loader=new FXMLLoader(getClass().getResource("/Ventanas/inicio.fxml"));

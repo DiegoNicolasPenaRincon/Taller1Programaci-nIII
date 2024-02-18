@@ -9,6 +9,6 @@ import lombok.*;
 
 public class Cliente {
 
-    private String nombre, apellidos, identificacion, direccion,telefono;
+    private String tipoCliente, nombre, apellidos, identificacion, direccion,telefono;
 
 }

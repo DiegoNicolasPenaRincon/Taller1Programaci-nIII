@@ -15,4 +15,12 @@ public class Envasado extends Producto  {
     private float peso;
     private PaisOrigen pais;
 
+    public Envasado(String tipo, String codigo, String nombre, String descripcion, double valorUni, int cantExis,
+                    LocalDate fechaEnvasado, float peso, PaisOrigen pais){
+        super(tipo, codigo, nombre, descripcion, valorUni, cantExis);
+        this.fechaEnvasado=fechaEnvasado;
+        this.peso=peso;
+        this.pais=pais;
+    }
+
 }

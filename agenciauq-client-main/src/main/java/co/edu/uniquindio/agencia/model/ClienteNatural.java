@@ -15,9 +15,9 @@ public class ClienteNatural extends Cliente {
 
     private LocalDate nacimiento;
 
-    public ClienteNatural(String nombre, String apellido, String ID, String direccion, String telefono,
+    public ClienteNatural(String tipo, String nombre, String apellido, String ID, String direccion, String telefono,
                           String email, LocalDate fechaNac){
-        super(nombre, apellido, ID, direccion, telefono);
+        super(tipo, nombre, apellido, ID, direccion, telefono);
         this.email=email;
         this.nacimiento=fechaNac;
     }
