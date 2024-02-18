@@ -1,6 +1,8 @@
 package co.edu.uniquindio.agencia.controller;
 
 import co.edu.uniquindio.agencia.model.Almacen;
+import co.edu.uniquindio.agencia.model.CampoVacioException;
+import co.edu.uniquindio.agencia.model.TelefonoNoValidoException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -103,6 +105,21 @@ public class RegistroClienteController implements Initializable{
 
     public void registrarCliente() {
         String esNatural=comboTipo.getSelectionModel().getSelectedItem();
-        almacen.registrarCliente(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText(),txtNIT.getText(),txtEmail.getText(),txt);
+        try
+        {
+            almacen.registrarCliente(txtNombre.getText(),txtApellido.getText(),txtID.getText(),txtDireccion.getText(),txtTelefono.getText(),txtNIT.getText(),txtEmail.getText(),DateNacimiento.getValue().toString(),esNatural);
+        }
+        catch (TelefonoNoValidoException e)
+        {
+
+        }
+        catch (CampoVacioException ex)
+        {
+
+        }
+        catch (NumberFormatException ex2)
+        {
+
+        }
     }
 }
