@@ -2,6 +2,8 @@ package co.edu.uniquindio.agencia.controller;
 
 import co.edu.uniquindio.agencia.model.Almacen;
 import co.edu.uniquindio.agencia.model.CampoVacioException;
+import co.edu.uniquindio.agencia.model.IdentificacionNoValidaException;
+import co.edu.uniquindio.agencia.model.TelefonoNoValidoException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -99,7 +101,7 @@ public class RegistroClienteController implements Initializable{
         this.stage.close();
     }
 
-    public void registrarCliente() throws CampoVacioException {
+    public void registrarCliente()  {
         try {
             String esNatural = comboTipo.getSelectionModel().getSelectedItem();
             almacen.registrarCliente(txtNombre.getText(), txtApellido.getText(), txtID.getText(), txtDireccion.getText(), txtTelefono.getText(),
@@ -108,11 +110,35 @@ public class RegistroClienteController implements Initializable{
             alert.setHeaderText(null);
             alert.setContentText("Se ha registrado correctamente el cliente ");
             alert.show();
-        } catch (CampoVacioException e) {
+        }
+        catch (CampoVacioException e)
+        {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
             alert.setHeaderText(null);
             alert.show();
         }
+        catch (NumberFormatException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Su identificacion y su numero de telefono deben contener solamente numeros");
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch (IdentificacionNoValidaException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch (TelefonoNoValidoException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+
     }
 }

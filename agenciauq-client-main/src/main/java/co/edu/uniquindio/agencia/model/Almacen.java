@@ -32,13 +32,17 @@ public class Almacen {
     }
 
     public void registrarCliente(String nombre, String apellido,String ID,
-                                 String direccion, String telefono, String NIT,String email,LocalDate nacimiento,String esNatural) throws CampoVacioException {
-        String campoObligatorio="Este campo es obligatorio";
+                                 String direccion, String telefono, String NIT,String email,LocalDate nacimiento,String esNatural) throws CampoVacioException, TelefonoNoValidoException, IdentificacionNoValidaException {
         validarCampoVacio(nombre);
         validarCampoVacio(ID);
         validarCampoVacio(direccion);
         validarCampoVacio(telefono);
         validarCampoVacio(apellido);
+        validarTelefono(telefono);
+        validarIdentificacion(ID);
+        int IDApoyo=Integer.parseInt(ID);
+        int telefonoApoyo=Integer.parseInt(ID);
+
         if(esNatural.equals("Natural"))
         {
             validarCampoVacio(String.valueOf(nacimiento));
@@ -93,6 +97,7 @@ public class Almacen {
 
 
     //Validaciones
+    
      public void validarCampoVacio(String cualquiera) throws CampoVacioException {
          String msg="Este campo es obligatorio";
         if(cualquiera.isEmpty()||cualquiera==null)
@@ -101,5 +106,20 @@ public class Almacen {
         }
 
      }
+
+    public void validarTelefono(String telefono) throws TelefonoNoValidoException {
+        if(telefono.length()!=7)
+        {
+            throw new TelefonoNoValidoException("El telefono debe contener unica y exclusivamente 7 digitos");
+        }
+    }
+
+    public void validarIdentificacion(String identificacion) throws IdentificacionNoValidaException {
+        if(identificacion.length()!=8)
+        {
+            throw new IdentificacionNoValidaException("Su identificacion debe contener unicamente 8 caracteres");
+        }
+
+    }
 
 }
