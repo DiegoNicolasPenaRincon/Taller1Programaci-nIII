@@ -8,7 +8,6 @@ import java.time.LocalDate;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 
 public class ClienteNatural extends Cliente {
 

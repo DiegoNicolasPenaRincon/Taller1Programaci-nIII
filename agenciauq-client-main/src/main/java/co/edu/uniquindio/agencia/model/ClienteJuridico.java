@@ -6,7 +6,6 @@ import lombok.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 
 public class ClienteJuridico extends Cliente {
     private String nit;

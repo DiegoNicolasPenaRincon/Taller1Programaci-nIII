@@ -8,7 +8,9 @@ import java.util.ArrayList;
 @Getter
 public class Almacen {
 
-    private ArrayList<Cliente> listaClientes;
+    private ArrayList<ClienteNatural> listaClientesNaturales;
+
+    private ArrayList<ClienteJuridico> listaClientesJuridicos;
 
     private ArrayList<Producto> listaProductos;
 
@@ -21,25 +23,41 @@ public class Almacen {
         return Almacen;
     }
 
-    public Almacen(){
-        this.listaClientes=new ArrayList<>();
+    private Almacen(){
+        this.listaClientesNaturales=new ArrayList<ClienteNatural>();
+        this.listaClientesJuridicos=new ArrayList<ClienteJuridico>();
         this.listaProductos=new ArrayList<>();
     }
 
-    public void registrarClienteNatural(String nombre, String apellido,
-                                        String ID, String direccion, String telefono, String email,
-                                        LocalDate fechaNac ){
-        ClienteNatural cliente=new ClienteNatural(nombre, apellido, ID, direccion, telefono, email, fechaNac);
-        listaClientes.add(cliente);
+    public void registrarCliente(String nombre, String apellido,String ID, String direccion, String telefono, String NIT,String email,String nacimiento,String esNatural) throws CampoVacioException {
+        String campoObligatorio="Este campo es obligatorio";
+        validarCampoVacio(nombre,campoObligatorio);
+        validarCampoVacio(ID,campoObligatorio);
+        validarCampoVacio(direccion,campoObligatorio);
+        validarCampoVacio(telefono,campoObligatorio);
+        validarCampoVacio(apellido,campoObligatorio);
+        if(esNatural.equals("Natural"))
+        {
+            validarCampoVacio(nacimiento,campoObligatorio);
+            validarCampoVacio(email,campoObligatorio);
+            ClienteNatural natural=new ClienteNatural(nombre,apellido,ID,direccion,telefono,email,LocalDate.parse(nacimiento));
+            listaClientesNaturales.add(natural);
+        }
+        else
+        {
+            validarCampoVacio(NIT,campoObligatorio);
+            ClienteJuridico juridico=new ClienteJuridico(nombre,apellido,ID,direccion,telefono,NIT);
+            listaClientesJuridicos.add(juridico);
+        }
+
     }
 
-    public void registrarClienteJuridico(String nombre, String apellido,
-                                         String ID, String direccion, String telefono, String NIT){
-        ClienteJuridico cliente=new ClienteJuridico(nombre, apellido, ID, direccion, telefono, NIT);
-        listaClientes.add(cliente);
-    }
 
-
-
-
+    //Validaciones
+     public void validarCampoVacio(String cualquiera,String msg) throws CampoVacioException {
+        if(cualquiera.isEmpty()||cualquiera==null)
+        {
+            throw new CampoVacioException(msg);
+        }
+     }
 }

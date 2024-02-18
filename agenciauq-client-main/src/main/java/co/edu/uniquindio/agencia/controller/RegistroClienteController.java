@@ -101,6 +101,7 @@ public class RegistroClienteController implements Initializable{
         this.stage.close();
     }
 
-    public void registrarCliente(){
+    public void registrarCliente() {
+        String esNatural=comboTipo.getSelectionModel().getSelectedItem();
     }
 }
