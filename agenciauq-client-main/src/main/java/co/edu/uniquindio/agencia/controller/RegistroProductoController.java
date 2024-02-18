@@ -1,9 +1,6 @@
 package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.agencia.model.Almacen;
-import co.edu.uniquindio.agencia.model.CampoVacioException;
-import co.edu.uniquindio.agencia.model.PaisOrigen;
-import co.edu.uniquindio.agencia.model.TipoNoEspecificadoException;
+import co.edu.uniquindio.agencia.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -150,11 +147,27 @@ public class RegistroProductoController implements Initializable {
         catch(NumberFormatException e)
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("El valor unitario, la cantidad de existencias deben ser numeros reales no caracteres, la temperatura recomendada");
+            alert.setContentText("El valor unitario, la cantidad de existencias, la temperatura recomendada y el peso del envase deben ser numeros reales no caracteres");
             alert.setHeaderText(null);
             alert.show();
         }
         catch (TipoNoEspecificadoException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        } catch (ProductoRegistradoException e) {
+            throw new RuntimeException(e);
+        }
+        catch (No8CaracteresException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch (ProductoRegistradoException e)
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());

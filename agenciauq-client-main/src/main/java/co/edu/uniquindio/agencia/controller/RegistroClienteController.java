@@ -1,9 +1,6 @@
 package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.agencia.model.Almacen;
-import co.edu.uniquindio.agencia.model.CampoVacioException;
-import co.edu.uniquindio.agencia.model.IdentificacionNoValidaException;
-import co.edu.uniquindio.agencia.model.TelefonoNoValidoException;
+import co.edu.uniquindio.agencia.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -142,7 +139,7 @@ public class RegistroClienteController implements Initializable{
             alert.setHeaderText(null);
             alert.show();
         }
-        catch (IdentificacionNoValidaException e)
+        catch (No8CaracteresException e)
         {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
