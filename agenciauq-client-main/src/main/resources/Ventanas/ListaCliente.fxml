@@ -20,6 +20,19 @@
             <TableColumn fx:id="colEmail" prefWidth="77.3333740234375" text="Email" />
         </columns>
       </TableView>
+<<<<<<< Updated upstream
       <Button fx:id="btnRegresar" layoutX="29.0" layoutY="343.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
+=======
+      <Button fx:id="btnRegresar" layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: green;" text="Regresar" textFill="WHITE" />
+      <Pane prefHeight="69.0" prefWidth="737.0" style="-fx-background-color: green;">
+         <children>
+            <Text fill="WHITE" layoutX="305.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Clientes" textAlignment="CENTER" wrappingWidth="127.0755615234375">
+               <font>
+                  <Font name="Verdana" size="25.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+>>>>>>> Stashed changes
    </children>
 </AnchorPane>
