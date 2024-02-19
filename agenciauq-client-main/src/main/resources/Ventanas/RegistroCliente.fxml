@@ -7,22 +7,24 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="513.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.RegistroClienteController">
+<AnchorPane prefHeight="538.0" prefWidth="504.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.RegistroClienteController">
    <children>
-      <Button fx:id="btnRegresar" layoutX="31.0" layoutY="353.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="101.0" text="Regresar" />
-      <TextField fx:id="txtNombre" layoutX="29.0" layoutY="67.0" prefHeight="25.0" prefWidth="169.0" />
-      <Label layoutX="30.0" layoutY="38.0" text="Nombres:" />
-      <Label layoutX="30.0" layoutY="108.0" text="Apellidos:" />
-      <TextField fx:id="txtApellido" layoutX="29.0" layoutY="125.0" prefHeight="25.0" prefWidth="169.0" />
-      <Label layoutX="30.0" layoutY="169.0" text="Identificación:" />
-      <TextField fx:id="txtID" layoutX="29.0" layoutY="187.0" prefHeight="25.0" prefWidth="169.0" />
-      <Label layoutX="38.0" layoutY="230.0" prefHeight="17.0" prefWidth="58.0" text="Dirección" />
-      <TextField fx:id="txtDireccion" layoutX="29.0" layoutY="247.0" prefHeight="25.0" prefWidth="169.0" />
-      <Label layoutX="42.0" layoutY="284.0" text="Telefono:" />
-      <TextField fx:id="txtTelefono" layoutX="29.0" layoutY="309.0" prefHeight="25.0" prefWidth="169.0" />
-      <ComboBox fx:id="comboTipo" layoutX="242.0" layoutY="67.0" prefHeight="25.0" prefWidth="169.0" />
-      <Label layoutX="242.0" layoutY="38.0" text="Tipo de Persona:" />
+      <Button fx:id="btnRegresar" layoutX="63.0" layoutY="449.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="101.0" style="-fx-background-color: green;" text="Regresar" textFill="WHITE" />
+      <TextField fx:id="txtNombre" layoutX="29.0" layoutY="79.0" prefHeight="25.0" prefWidth="169.0" />
+      <Label layoutX="30.0" layoutY="54.0" text="Nombres:" />
+      <Label layoutX="30.0" layoutY="123.0" text="Apellidos:" />
+      <TextField fx:id="txtApellido" layoutX="29.0" layoutY="155.0" prefHeight="25.0" prefWidth="169.0" />
+      <Label layoutX="29.0" layoutY="193.0" text="Identificación:" />
+      <TextField fx:id="txtID" layoutX="29.0" layoutY="221.0" prefHeight="25.0" prefWidth="169.0" />
+      <Label layoutX="27.0" layoutY="260.0" prefHeight="17.0" prefWidth="58.0" text="Dirección" />
+      <TextField fx:id="txtDireccion" layoutX="29.0" layoutY="294.0" prefHeight="25.0" prefWidth="169.0" />
+      <Label layoutX="31.0" layoutY="327.0" text="Telefono:" />
+      <TextField fx:id="txtTelefono" layoutX="29.0" layoutY="352.0" prefHeight="25.0" prefWidth="169.0" />
+      <ComboBox fx:id="comboTipo" layoutX="242.0" layoutY="79.0" prefHeight="25.0" prefWidth="169.0" />
+      <Label layoutX="242.0" layoutY="54.0" text="Tipo de Persona:" />
       <Pane fx:id="panelN" layoutX="242.0" layoutY="123.0" prefHeight="231.0" prefWidth="258.0">
          <children>
             <Label layoutY="72.0" prefHeight="17.0" prefWidth="67.0" text="Email:" />
@@ -34,9 +36,18 @@
       <Pane fx:id="panelJ" layoutX="218.0" layoutY="114.0" prefHeight="240.0" prefWidth="249.0">
          <children>
             <Label layoutX="26.0" layoutY="9.0" prefHeight="17.0" prefWidth="88.0" text="NIT" />
-            <TextField fx:id="txtNIT" layoutX="23.0" layoutY="29.0" prefHeight="25.0" prefWidth="183.0" />
+            <TextField fx:id="txtNIT" layoutX="23.0" layoutY="37.0" prefHeight="25.0" prefWidth="183.0" />
          </children>
       </Pane>
-      <Button fx:id="btnRegistrar" layoutX="205.0" layoutY="353.0" mnemonicParsing="false" onAction="#registrarCliente" text="Registrar" />
+      <Button fx:id="btnRegistrar" layoutX="298.0" layoutY="449.0" mnemonicParsing="false" onAction="#registrarCliente" style="-fx-background-color: green;" text="Registrar" textFill="WHITE" />
+      <Pane layoutX="-2.0" layoutY="-8.0" prefHeight="57.0" prefWidth="513.0" style="-fx-background-color: green;">
+         <children>
+            <Text fill="WHITE" layoutX="132.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Clientes" textAlignment="CENTER" wrappingWidth="249.33333333333337">
+               <font>
+                  <Font name="Kristen ITC" size="22.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>
