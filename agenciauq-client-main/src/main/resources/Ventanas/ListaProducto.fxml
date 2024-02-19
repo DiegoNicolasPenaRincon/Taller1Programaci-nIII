@@ -13,7 +13,7 @@
       <TableView fx:id="tablaProducto" layoutX="4.0" layoutY="107.0" prefHeight="200.0" prefWidth="840.0">
         <columns>
           <TableColumn fx:id="colTipo" prefWidth="61.333346366882324" text="Tipo" />
-            <TableColumn prefWidth="66.66667938232422" text="Codigo" />
+            <TableColumn fx:id="colCod" prefWidth="66.66667938232422" text="Codigo" />
           <TableColumn fx:id="colNombre" prefWidth="71.33328247070312" text="Nombre" />
             <TableColumn fx:id="colValor" prefWidth="60.66664123535156" text="Valor" />
             <TableColumn fx:id="colExis" prefWidth="70.0" text="Existencias" />
@@ -25,7 +25,13 @@
             <TableColumn fx:id="colPais" prefWidth="75.33331298828125" text="Pais Origen" />
         </columns>
       </TableView>
+
       <Button fx:id="btnRegresar" layoutX="45.0" layoutY="344.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: green;" text="Regresar" textFill="WHITE" />
+
+      <Button fx:id="btnRegresar" layoutX="45.0" layoutY="344.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="82.0" text="Regresar" />
+
+      <Button fx:id="btnRegresar" layoutX="71.0" layoutY="343.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: green;" text="Regresar" textFill="WHITE" />
+
       <Pane prefHeight="77.0" prefWidth="844.0" style="-fx-background-color: green;">
          <children>
             <Text fill="WHITE" layoutX="354.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos" textAlignment="CENTER">
@@ -35,5 +41,6 @@
             </Text>
          </children>
       </Pane>
+
    </children>
 </AnchorPane>

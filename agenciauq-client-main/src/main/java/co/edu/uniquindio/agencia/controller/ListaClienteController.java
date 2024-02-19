@@ -78,6 +78,7 @@ public class ListaClienteController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        colTipo.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getTipoCliente()));
         colNombre.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getNombre()));
         colApellido.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getApellidos()));
         colID.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getIdentificacion()));
