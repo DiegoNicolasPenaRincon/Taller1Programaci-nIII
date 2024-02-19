@@ -1,7 +1,6 @@
 package co.edu.uniquindio.agencia.controller;
 
-import co.edu.uniquindio.agencia.model.Almacen;
-import co.edu.uniquindio.agencia.model.CampoVacioException;
+import co.edu.uniquindio.agencia.model.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -99,16 +98,63 @@ public class RegistroClienteController implements Initializable{
         this.stage.close();
     }
 
-    public void registrarCliente() throws CampoVacioException {
+    public void registrarCliente()  {
         try {
             String esNatural = comboTipo.getSelectionModel().getSelectedItem();
             almacen.registrarCliente(txtNombre.getText(), txtApellido.getText(), txtID.getText(), txtDireccion.getText(), txtTelefono.getText(),
                     txtNIT.getText(), txtEmail.getText(), DateNacimiento.getValue(), esNatural);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            if(esNatural.equals("Natural"))
+            {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Se ha registrado correctamente el cliente natural ");
+                alert.show();
+            }
+            else if(esNatural.equals("Juridica"))
+            {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Se ha registrado correctamente el cliente juridico ");
+                alert.show();
+            }
+            else
+            {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText(null);
+                alert.setContentText("Debe seleccionar si el cliente es natural o juridico ");
+                alert.show();
+            }
+        }
+        catch (CampoVacioException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
             alert.setHeaderText(null);
-            alert.setContentText("Se ha registrado correctamente el cliente ");
             alert.show();
-        } catch (CampoVacioException e) {
+        }
+        catch (NumberFormatException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Su identificacion y su numero de telefono deben contener solamente numeros");
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch (No8CaracteresException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch (TelefonoNoValidoException e)
+        {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText(e.getMessage());
+            alert.setHeaderText(null);
+            alert.show();
+        }
+        catch(ClienteRegistradoException e)
+        {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText(e.getMessage());
             alert.setHeaderText(null);
