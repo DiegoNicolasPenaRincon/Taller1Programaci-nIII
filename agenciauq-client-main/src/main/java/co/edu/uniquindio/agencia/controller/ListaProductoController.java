@@ -2,6 +2,8 @@ package co.edu.uniquindio.agencia.controller;
 
 import co.edu.uniquindio.agencia.model.*;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,6 +19,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ListaProductoController implements Initializable {
+
+    private final Almacen almacen=Almacen.getInstance();
     @FXML
     private Button btnRegresar;
 
@@ -27,19 +31,19 @@ public class ListaProductoController implements Initializable {
     private TableColumn<Envasado, String> colEnvasado;
 
     @FXML
-    private TableColumn<Producto, Integer> colExis;
+    private TableColumn<Producto, String> colExis;
 
     @FXML
     private TableColumn<Producto, String> colNombre;
 
     @FXML
-    private TableColumn<Envasado, PaisOrigen> colPais;
+    private TableColumn<Envasado, String> colPais;
 
     @FXML
     private TableColumn<Envasado, String> colPeso;
 
     @FXML
-    private TableColumn<Refrigerante, Float> colTemp;
+    private TableColumn<Refrigerante,String> colTemp;
 
     @FXML
     private TableColumn<Producto, String> colTipo;
@@ -80,7 +84,16 @@ public class ListaProductoController implements Initializable {
         colCod.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getCodigo()));
         colNombre.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getNombre()));
         colValor.setCellValueFactory(cellData-> new SimpleStringProperty(Double.toString(cellData.getValue().getValorUnitario())));
+        colExis.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getCantExistencias())));
+        colVenci.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getVencimiento())));
+        colCod.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getCodigo())));
+        colTemp.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getTemperaturaRecomendada())));
+        colEnvasado.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getFechaEnvasado())));
+        colPeso.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getPeso())));
+        colPais.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getPais().toString()));
 
 
+        ObservableList<Producto> listaProducto= FXCollections.observableArrayList(almacen.getListaProductos());
+        tablaProducto.setItems(listaProducto);
     }
 }
