@@ -5,25 +5,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.InicioController">
    <children>
-<<<<<<< Updated upstream
       <Button fx:id="btnRegistroCliente" layoutX="158.0" layoutY="98.0" mnemonicParsing="false" onAction="#mostrarRegistroCliente" text="Registrar cliente" />
       <Button fx:id="btnRegistroProducto" layoutX="151.0" layoutY="187.0" mnemonicParsing="false" onAction="#mostrarRegistroProducto" text="Registrar Producto" />
       <Button fx:id="btnListaProducto" layoutX="141.0" layoutY="231.0" mnemonicParsing="false" onAction="#mostrarListaProducto" text="Ver Lista de Productos" />
       <Button fx:id="btnListaCliente" layoutX="147.0" layoutY="135.0" mnemonicParsing="false" onAction="#mostrarListaCliente" text="Ver Lista de Clientes" />
-=======
-      <Button fx:id="btnRegistroCliente" layoutX="158.0" layoutY="142.0" mnemonicParsing="false" onAction="#mostrarRegistroCliente" prefHeight="29.0" prefWidth="101.0" style="-fx-background-color: green;" text="Registrar cliente" textFill="WHITE" />
-      <Button fx:id="btnRegistroProducto" layoutX="151.0" layoutY="267.0" mnemonicParsing="false" onAction="#mostrarRegistroProducto" prefHeight="29.0" prefWidth="115.0" style="-fx-background-color: green;" text="Registrar Producto" textFill="WHITE" />
-      <Button fx:id="btnListaProducto" layoutX="141.0" layoutY="321.0" mnemonicParsing="false" onAction="#mostrarListaProducto" prefHeight="29.0" prefWidth="135.0" style="-fx-background-color: green;" text="Ver Lista de Productos" textFill="WHITE" />
-      <Button fx:id="btnListaCliente" layoutX="147.0" layoutY="207.0" mnemonicParsing="false" onAction="#mostrarListaCliente" prefHeight="29.0" prefWidth="123.0" style="-fx-background-color: green;" text="Ver Lista de Clientes" textFill="WHITE" />
-      <Pane layoutY="-1.0" prefHeight="97.0" prefWidth="418.0" style="-fx-background-color: green;">
-         <children>
-            <Text fill="WHITE" layoutX="124.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Almacen UQ" textAlignment="CENTER" wrappingWidth="170.6666463216145">
-               <font>
-                  <Font name="Britannic Bold" size="29.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
->>>>>>> Stashed changes
    </children>
 </AnchorPane>
