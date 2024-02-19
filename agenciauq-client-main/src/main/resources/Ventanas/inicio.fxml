@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="418.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agencia.controller.InicioController">
    <children>
-      <Button fx:id="btnRegistroCliente" layoutX="158.0" layoutY="98.0" mnemonicParsing="false" onAction="#mostrarRegistroCliente" text="Registrar cliente" />
-      <Button fx:id="btnRegistroProducto" layoutX="151.0" layoutY="187.0" mnemonicParsing="false" onAction="#mostrarRegistroProducto" text="Registrar Producto" />
-      <Button fx:id="btnListaProducto" layoutX="141.0" layoutY="231.0" mnemonicParsing="false" onAction="#mostrarListaProducto" text="Ver Lista de Productos" />
-      <Button fx:id="btnListaCliente" layoutX="147.0" layoutY="135.0" mnemonicParsing="false" onAction="#mostrarListaCliente" text="Ver Lista de Clientes" />
+      <Button fx:id="btnRegistroCliente" layoutX="141.0" layoutY="135.0" mnemonicParsing="false" onAction="#mostrarRegistroCliente" prefHeight="25.0" prefWidth="135.0" text="Registrar cliente" />
+      <Button fx:id="btnRegistroProducto" layoutX="141.0" layoutY="221.0" mnemonicParsing="false" onAction="#mostrarRegistroProducto" prefHeight="25.0" prefWidth="135.0" text="Registrar Producto" />
+      <Button fx:id="btnListaProducto" layoutX="140.0" layoutY="262.0" mnemonicParsing="false" onAction="#mostrarListaProducto" text="Ver Lista de Productos" />
+      <Button fx:id="btnListaCliente" layoutX="142.0" layoutY="174.0" mnemonicParsing="false" onAction="#mostrarListaCliente" prefHeight="25.0" prefWidth="135.0" text="Ver Lista de Clientes" />
+      <Label layoutX="122.0" layoutY="56.0" prefHeight="43.0" prefWidth="187.0" text="Almacen UQ">
+         <font>
+            <Font name="Book Antiqua Bold Italic" size="28.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
