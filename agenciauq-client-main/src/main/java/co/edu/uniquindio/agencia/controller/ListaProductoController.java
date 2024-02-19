@@ -85,13 +85,50 @@ public class ListaProductoController implements Initializable {
         colNombre.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getNombre()));
         colValor.setCellValueFactory(cellData-> new SimpleStringProperty(Double.toString(cellData.getValue().getValorUnitario())));
         colExis.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getCantExistencias())));
-        colVenci.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getVencimiento())));
-        colCod.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getCodigo())));
-        colTemp.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getTemperaturaRecomendada())));
-        colEnvasado.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getFechaEnvasado())));
-        colPeso.setCellValueFactory(cellData-> new SimpleStringProperty(String.valueOf(cellData.getValue().getPeso())));
-        colPais.setCellValueFactory(cellData-> new SimpleStringProperty(cellData.getValue().getPais().toString()));
 
+        colVenci.setCellValueFactory(cellData-> {
+            if (cellData.getValue() instanceof Perecedero) {
+                return new SimpleStringProperty((cellData.getValue().getVencimiento().toString()));
+            }
+            return null;
+        });
+
+
+        colAprob.setCellValueFactory(cellData-> {
+            if (cellData.getValue() instanceof Refrigerante) {
+                return new SimpleStringProperty(String.valueOf(cellData.getValue().getCodigo()));
+            }
+            return null;
+        });
+
+        colTemp.setCellValueFactory(cellData-> {
+            if (cellData.getValue() instanceof Refrigerante) {
+                return new SimpleStringProperty(String.valueOf(cellData.getValue().getTemperaturaRecomendada()));
+            }
+            return null;
+        });
+
+
+        colEnvasado.setCellValueFactory(cellData-> {
+            if (cellData.getValue() instanceof Envasado) {
+                return new SimpleStringProperty((cellData.getValue().getFechaEnvasado().toString()));
+            }
+            return null;
+        });
+
+        colPeso.setCellValueFactory(cellData-> {
+            if (cellData.getValue() instanceof Envasado) {
+                return new SimpleStringProperty(String.valueOf(cellData.getValue().getPeso()));
+            }
+            return null;
+        });
+
+        colPais.setCellValueFactory(cellData-> {
+            if (cellData.getValue() instanceof Envasado) {
+                return new SimpleStringProperty((cellData.getValue().getPais().toString()));
+            }
+            return null;
+        });
 
         ObservableList<Producto> listaProducto= FXCollections.observableArrayList(almacen.getListaProductos());
         tablaProducto.setItems(listaProducto);

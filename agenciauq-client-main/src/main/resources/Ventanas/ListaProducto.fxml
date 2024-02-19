@@ -10,7 +10,7 @@
       <TableView fx:id="tablaProducto" layoutX="14.0" layoutY="87.0" prefHeight="200.0" prefWidth="840.0">
         <columns>
           <TableColumn fx:id="colTipo" prefWidth="61.333346366882324" text="Tipo" />
-            <TableColumn prefWidth="66.66667938232422" text="Codigo" />
+            <TableColumn fx:id="colCod" prefWidth="66.66667938232422" text="Codigo" />
           <TableColumn fx:id="colNombre" prefWidth="71.33328247070312" text="Nombre" />
             <TableColumn fx:id="colValor" prefWidth="60.66664123535156" text="Valor" />
             <TableColumn fx:id="colExis" prefWidth="70.0" text="Existencias" />
