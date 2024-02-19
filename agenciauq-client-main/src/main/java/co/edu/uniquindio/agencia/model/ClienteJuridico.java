@@ -8,6 +8,7 @@ import lombok.*;
 @NoArgsConstructor
 
 public class ClienteJuridico extends Cliente {
+
     private String nit;
 
     public ClienteJuridico(String tipo, String nombre, String apellido, String id, String direccion, String telefono, String nit){
