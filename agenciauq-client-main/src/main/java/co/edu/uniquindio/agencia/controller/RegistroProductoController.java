@@ -157,13 +157,8 @@ public class RegistroProductoController implements Initializable {
             alert.setContentText(e.getMessage());
             alert.setHeaderText(null);
             alert.show();
-        }
-        catch (ProductoRegistradoException e)
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText(e.getMessage());
-            alert.setHeaderText(null);
-            alert.show();
+        } catch (ProductoRegistradoException e) {
+            throw new RuntimeException(e);
         }
         catch (No8CaracteresException e)
         {

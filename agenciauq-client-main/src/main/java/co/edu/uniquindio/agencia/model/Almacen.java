@@ -20,7 +20,7 @@ public class Almacen {
         return Almacen;
     }
 
-    private Almacen() {
+    private Almacen(){
         this.listaClientes=new ArrayList<Cliente>();
 
         this.listaProductos=new ArrayList<Producto>();
@@ -61,7 +61,7 @@ public class Almacen {
     }
 
     public void registrarProducto(String tipo, String codigo, String nombre,String descripcion, String valorUni, String cantExis, LocalDate vencimiento,
-                                  String codigoAprobacion, String temperaturaRecomendada, LocalDate fechaEnvasado, String peso, PaisOrigen pais) throws CampoVacioException, TipoNoEspecificadoException, No8CaracteresException, ProductoRegistradoException {
+                                  String codigoAprobacion, String temperaturaRecomendada, LocalDate fechaEnvasado, String peso, PaisOrigen pais) throws CampoVacioException, TipoNoEspecificadoException, ProductoRegistradoException, No8CaracteresException {
 
         validarCampoVacio(codigo,"Debe especificar el codigo del producto");
         validarIdentificacionYCodigo(codigo,"El codigo identificativo del producto debe contener 8 caracteres");
