@@ -22,19 +22,6 @@
             <TableColumn fx:id="colPais" prefWidth="75.33331298828125" text="Pais Origen" />
         </columns>
       </TableView>
-<<<<<<< Updated upstream
       <Button fx:id="btnRegresar" layoutX="45.0" layoutY="344.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="82.0" text="Regresar" />
-=======
-      <Button fx:id="btnRegresar" layoutX="71.0" layoutY="343.0" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: green;" text="Regresar" textFill="WHITE" />
-      <Pane prefHeight="77.0" prefWidth="844.0" style="-fx-background-color: green;">
-         <children>
-            <Text fill="WHITE" layoutX="354.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Productos" textAlignment="CENTER">
-               <font>
-                  <Font name="Kristen ITC" size="33.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
->>>>>>> Stashed changes
    </children>
 </AnchorPane>
